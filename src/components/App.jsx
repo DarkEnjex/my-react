@@ -1,6 +1,8 @@
 // ? Екпорт та експорт компонентів
 // import Product from "./Product";
 
+// import { useState } from "react";
+
 // export default function App() {
 //   return (
 //     <div>
@@ -267,18 +269,54 @@
 // }
 
 // ?
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-export default function App() {
-  const [clicks, setClicks] = useState(0);
+// export default function App() {
+//   const [clicks, setClicks] = useState(0);
 
-  useEffect(() => {
-    console.log("clicks uodates: ", clicks);
-  }, [clicks]);
+//   useEffect(() => {
+//     console.log("clicks uodates: ", clicks);
+//   }, [clicks]);
 
-  return (
-    <button onClick={() => setClicks(clicks + 1)}>
-      U clicked {clicks} times
-    </button>
-  );
-}
+//   return (
+//     <button onClick={() => setClicks(clicks + 1)}>
+//       U clicked {clicks} times
+//     </button>
+//   );
+// }
+
+// ? ВСІ ЕФЕКТИ
+// import { useState, useEffect } from "react";
+
+// export default function App() {
+//   const [first, setFirst] = useState(0);
+//   const [second, setSecond] = useState(0);
+
+//   useEffect(() => {
+//     console.log("First updated: ", first);
+//   }, [first]);
+
+//   useEffect(() => {
+//     console.log("Second updated: ", second);
+//   }, [second]);
+
+//   useEffect(() => {
+//     console.log(
+//       "First or second updated: ",
+//       first + second
+//     );
+//   }, [first, second]);
+
+//   return (
+//     <>
+//       <button onClick={() => setFirst(first + 1)}>
+//         First: {first}
+//       </button>
+//       <button
+//         onClick={() => setSecond(second + 1)}
+//       >
+//         Second: {second}
+//       </button>
+//     </>
+//   );
+// }
