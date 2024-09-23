@@ -220,13 +220,62 @@
 // }
 
 // ?
+// import { useState, useEffect } from "react";
+
+// export default function App() {
+//   const [clicks, setClicks] = useState(0);
+//   useEffect(() => {
+//     document.title = `U clicked ${clicks} times`;
+//   });
+//   return (
+//     <button onClick={() => setClicks(clicks + 1)}>
+//       U clicked {clicks} times
+//     </button>
+//   );
+// }
+
+// ?
+// import { useState, useEffect } from "react";
+
+// const Modal = () => {
+//   useEffect(() => {
+//     // Зберігаємо ідентифікатор інтервалу в змінну
+//     const intervalId = setInterval(() => {
+//       console.log(`Interval - ${Date.now()}`);
+//     }, 2000);
+
+//     return () => {
+//       // Очищаємо інтервал за його ідентифікатором
+//       clearInterval(intervalId);
+//     };
+//   }, []);
+
+//   return <div>Modal</div>;
+// };
+
+// export default function App() {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <div>
+//       <button onClick={() => setIsOpen(!isOpen)}>
+//         {isOpen ? "Close" : "Open"}
+//       </button>
+//       {isOpen && <Modal />}
+//     </div>
+//   );
+// }
+
+// ?
 import { useState, useEffect } from "react";
 
 export default function App() {
   const [clicks, setClicks] = useState(0);
+
   useEffect(() => {
-    document.title = `U clicked ${clicks} times`;
-  });
+    console.log("clicks uodates: ", clicks);
+  }, [clicks]);
+
   return (
     <button onClick={() => setClicks(clicks + 1)}>
       U clicked {clicks} times
