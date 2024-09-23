@@ -63,23 +63,41 @@
 // }
 
 // ?
-const CustomButton = ({ message, children }) => {
-  return (
-    <button onClick={() => alert(message)}>
-      {children}
-    </button>
-  );
-};
+// const CustomButton = ({ message, children }) => {
+//   return (
+//     <button onClick={() => alert(message)}>
+//       {children}
+//     </button>
+//   );
+// };
+
+// export default function App() {
+//   return (
+//     <>
+//       <CustomButton message="Playing music!">
+//         Play some music
+//       </CustomButton>
+//       <CustomButton message="Uploading your data!">
+//         Upload data
+//       </CustomButton>
+//     </>
+//   );
+// }
+
+// ?
+import { useState } from "react";
 
 export default function App() {
+  const [clicks, setClicks] = useState(0);
+
+  const handleClick = () => {
+    // clicks = clicks + 1;
+    setClicks(clicks + 1);
+  };
+
   return (
-    <>
-      <CustomButton message="Playing music!">
-        Play some music
-      </CustomButton>
-      <CustomButton message="Uploading your data!">
-        Upload data
-      </CustomButton>
-    </>
+    <button onClick={handleClick}>
+      Current: {clicks}
+    </button>
   );
 }
