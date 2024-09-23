@@ -131,13 +131,45 @@
 // }
 
 // ?
-import ClickCounter from "./ClickCounter.jsx";
+// import ClickCounter from "./ClickCounter.jsx";
+
+// export default function App() {
+//   return (
+//     <>
+//       <ClickCounter />
+//       <ClickCounter />
+//     </>
+//   );
+// }
+
+// ?
+import { useState } from "react";
+
+const ClickCounter = ({ value, onUpdate }) => {
+  return (
+    <button onClick={onUpdate}>
+      Current: {value}
+    </button>
+  );
+};
 
 export default function App() {
+  const [clicks, setClicks] = useState(0);
+
+  const handleClick = () => {
+    setClicks(clicks + 1);
+  };
+
   return (
     <>
-      <ClickCounter />
-      <ClickCounter />
+      <ClickCounter
+        value={clicks}
+        onUpdate={handleClick}
+      />
+      <ClickCounter
+        value={clicks}
+        onUpdate={handleClick}
+      />
     </>
   );
 }
