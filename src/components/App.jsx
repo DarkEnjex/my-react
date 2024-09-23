@@ -143,33 +143,78 @@
 // }
 
 // ?
+// import { useState } from "react";
+
+// const ClickCounter = ({ value, onUpdate }) => {
+//   return (
+//     <button onClick={onUpdate}>
+//       Current: {value}
+//     </button>
+//   );
+// };
+
+// export default function App() {
+//   const [clicks, setClicks] = useState(0);
+
+//   const handleClick = () => {
+//     setClicks(clicks + 1);
+//   };
+
+//   return (
+//     <>
+//       <ClickCounter
+//         value={clicks}
+//         onUpdate={handleClick}
+//       />
+//       <ClickCounter
+//         value={clicks}
+//         onUpdate={handleClick}
+//       />
+//     </>
+//   );
+// }
+
+// ?
 import { useState } from "react";
 
-const ClickCounter = ({ value, onUpdate }) => {
-  return (
-    <button onClick={onUpdate}>
-      Current: {value}
-    </button>
-  );
-};
-
 export default function App() {
-  const [clicks, setClicks] = useState(0);
+  const [values, setValues] = useState({
+    x: 0,
+    y: 0,
+    z: 0,
+  });
 
-  const handleClick = () => {
-    setClicks(clicks + 1);
+  const updateX = () => {
+    setValues({
+      ...values,
+      x: values.x + 1,
+    });
+  };
+
+  const updateY = () => {
+    setValues({
+      ...values,
+      y: values.y + 1,
+    });
+  };
+
+  const updateZ = () => {
+    setValues({
+      ...values,
+      z: values.z + 1,
+    });
   };
 
   return (
-    <>
-      <ClickCounter
-        value={clicks}
-        onUpdate={handleClick}
-      />
-      <ClickCounter
-        value={clicks}
-        onUpdate={handleClick}
-      />
-    </>
+    <div>
+      <p>
+        x: {values.x}, y: {values.y}, z:{" "}
+        {values.z}
+      </p>
+
+      <button onClick={updateX}>Update x</button>
+      <button onClick={updateY}>Update y</button>
+      <button onClick={updateZ}>Update Z</button>
+    </div>
   );
 }
