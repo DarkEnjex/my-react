@@ -175,46 +175,61 @@
 // }
 
 // ?
-import { useState } from "react";
+// import { useState } from "react";
+
+// export default function App() {
+//   const [values, setValues] = useState({
+//     x: 0,
+//     y: 0,
+//     z: 0,
+//   });
+
+//   const updateX = () => {
+//     setValues({
+//       ...values,
+//       x: values.x + 1,
+//     });
+//   };
+
+//   const updateY = () => {
+//     setValues({
+//       ...values,
+//       y: values.y + 1,
+//     });
+//   };
+
+//   const updateZ = () => {
+//     setValues({
+//       ...values,
+//       z: values.z + 1,
+//     });
+//   };
+
+//   return (
+//     <div>
+//       <p>
+//         x: {values.x}, y: {values.y}, z:{" "}
+//         {values.z}
+//       </p>
+
+//       <button onClick={updateX}>Update x</button>
+//       <button onClick={updateY}>Update y</button>
+//       <button onClick={updateZ}>Update Z</button>
+//     </div>
+//   );
+// }
+
+// ?
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const [values, setValues] = useState({
-    x: 0,
-    y: 0,
-    z: 0,
+  const [clicks, setClicks] = useState(0);
+  useEffect(() => {
+    document.title = `U clicked ${clicks} times`;
   });
-
-  const updateX = () => {
-    setValues({
-      ...values,
-      x: values.x + 1,
-    });
-  };
-
-  const updateY = () => {
-    setValues({
-      ...values,
-      y: values.y + 1,
-    });
-  };
-
-  const updateZ = () => {
-    setValues({
-      ...values,
-      z: values.z + 1,
-    });
-  };
-
   return (
-    <div>
-      <p>
-        x: {values.x}, y: {values.y}, z:{" "}
-        {values.z}
-      </p>
-
-      <button onClick={updateX}>Update x</button>
-      <button onClick={updateY}>Update y</button>
-      <button onClick={updateZ}>Update Z</button>
-    </div>
+    <button onClick={() => setClicks(clicks + 1)}>
+      U clicked {clicks} times
+    </button>
   );
 }
