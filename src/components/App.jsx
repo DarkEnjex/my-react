@@ -44,19 +44,42 @@
 //   );
 // }
 
-export default function App() {
-  const handleClick = (evt) => {
-    console.log(evt);
-  };
+// ?
+// export default function App() {
+//   const handleClick = (evt) => {
+//     console.log(evt);
+//   };
 
+//   return (
+//     <>
+//       <button onClick={handleClick}>
+//         First button
+//       </button>
+//       <button onClick={(evt) => console.log(evt)}>
+//         Second button
+//       </button>
+//     </>
+//   );
+// }
+
+// ?
+const CustomButton = ({ message, children }) => {
+  return (
+    <button onClick={() => alert(message)}>
+      {children}
+    </button>
+  );
+};
+
+export default function App() {
   return (
     <>
-      <button onClick={handleClick}>
-        First button
-      </button>
-      <button onClick={(evt) => console.log(evt)}>
-        Second button
-      </button>
+      <CustomButton message="Playing music!">
+        Play some music
+      </CustomButton>
+      <CustomButton message="Uploading your data!">
+        Upload data
+      </CustomButton>
     </>
   );
 }
