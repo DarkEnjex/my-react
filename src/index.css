@@ -13,12 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body {
+body {
   font-family: sans-serif;
   line-height: 1.5;
-} */
+}
 
-/* h1,
+h1,
 h2,
 h3,
 h4,
@@ -37,4 +37,4 @@ ol {
 img {
   display: block;
   min-width: 100%;
-} */
+}
