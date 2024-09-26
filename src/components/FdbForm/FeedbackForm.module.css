@@ -1,0 +1,50 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+}
+
+.inp {
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.tarea {
+    margin-bottom: 10px;
+}
+
+.lvl {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.opt {
+    border-radius: 5px;
+}
+
+.btn {
+    border: none;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.2s ease;
+
+
+    &:hover {
+        background-color: rgb(158, 9, 9);
+    }
+}
